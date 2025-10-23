@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Zeus</title>
+  <link rel="stylesheet" href="zeus.css">
+  <!-- Fuente estilo romano -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <h1>🏛️ Hotel Zeus</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#habitaciones">Habitaciones</a>
+      <a href="#reservas">Reservas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero">
+    <h2>Bienvenido al Hotel Zeus</h2>
+    <p>⚡ Vive la experiencia de los dioses ⚡</p>
+    <a href="#reservas" class="btn">Reservar ahora</a>
+  </section>
+
+  <!-- Habitaciones -->
+  <section id="habitaciones" class="carrusel">
+    <h2>Nuestras Habitaciones</h2>
+    <div class="emoji-area">
+      <div class="emoji">👑 Suite</div>
+      <div class="emoji">🛏️ Doble</div>
+      <div class="emoji">🛎️ Sencilla</div>
+    </div>
+  </section>
+
+  <!-- Reservas -->
+  <section id="reservas">
+    <h2>Haz tu Reserva</h2>
+    <form class="formulario">
+      <label>Nombre completo:</label>
+      <input type="text" required>
+
+      <label>Fecha de Check-In:</label>
+      <input type="date" required>
+
+      <label>Fecha de Check-Out:</label>
+      <input type="date" required>
+
+      <label>Tipo de habitación:</label>
+      <select required>
+        <option value="">Seleccione...</option>
+        <option value="Suite">👑 Suite</option>
+        <option value="Doble">🛏️ Doble</option>
+        <option value="Sencilla">🛎️ Sencilla</option>
+      </select>
+
+      <button type="submit">Confirmar Reserva</button>
+    </form>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>📍 Calle Olimpo #123</p>
+    <p>📞 +57 300 000 0000</p>
+    <p>✉️ info@hotelzeus.com</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Hotel Zeus - Todos los derechos reservados ⚡</p>
+  </footer>
+
+  <!-- Script efecto emojis -->
+  <script>
+  document.querySelectorAll('.emoji').forEach(el => {
+    el.addEventListener('click', () => {
+      for (let i = 0; i < 5; i++) {
+        const particle = document.createElement('span');
+        particle.classList.add('particle');
+        particle.textContent = el.textContent.split(' ')[0]; // el emoji
+        particle.style.left = Math.random() * 40 - 20 + "px";
+        particle.style.top = Math.random() * -20 + "px";
+        el.appendChild(particle);
+        setTimeout(() => particle.remove(), 1500);
+      }
+    });
+  });
+  </script>
+</body>
+</html>
